@@ -121,6 +121,7 @@ p { margin: 0; }
 /* Blocs et grilles */
 .bloc { padding-top: 40px; padding-bottom: 16px; display: flex; flex-direction: column; gap: 16px; }
 .bloc:last-child { padding-bottom: 56px; }
+.bloc--centre { align-items: center; text-align: center; }
 .bloc--etroit > * { max-width: 760px; }
 .pile { display: flex; flex-direction: column; gap: 14px; }
 .grille { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
