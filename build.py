@@ -85,12 +85,14 @@ def construire():
     env.filters.update(md=md, md_inline=md_inline, chips=chips, dplus=dplus)
 
     site = lire("site.yml")
+    technique = lire("technique.yml")
     navigation = [{"id": sortie, "lien": sortie, "titre": menu} for sortie, _, _, menu, _, _ in PAGES if menu]
     svg_montagne = montagne()
 
     for sortie, gabarit, contenu, _, titre, description in PAGES:
         html = env.get_template(gabarit).render(
             site=site,
+            technique=technique,
             p=lire(contenu),
             navigation=navigation,
             page_id=sortie,
