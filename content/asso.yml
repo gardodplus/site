@@ -1,0 +1,33 @@
+titre: "L'asso"
+qui_titre: "Qui on est"
+qui_texte: "Gard Ô D+ est une association de 3 associés du Gard rhodanien. Notre ambition : organiser des événements outdoor autour du trail, du VTT, et pourquoi pas des raids ?"
+terrain_titre: "Notre terrain de jeu"
+terrain_texte: "Entre collines calcaires, garrigue et vignes, avec la Cèze et le soleil en prime."
+nom_titre: "Notre nom"
+nom_lignes:
+  - "**Gard**, parce que c'est chez nous."
+  - "**Ô**, celui que tu lâches au milieu de la côte."
+  - "**D+**, le dénivelé positif : notre signature."
+nom_chute: "Il y a déjà un accent sur le Ô, on en mettra un sur le D+. Alors, gare au D+ !"
+valeurs_titre: "Sport · Nature · Partage"
+valeurs:
+  - "Notre mot d'ordre : un tas d'activités sportives en pleine nature."
+  - "Et comme le sport, c'est toujours plus marrant à plusieurs, hors de question de ne pas partager ça tous ensemble."
+associes_titre: "Les associés"
+associes:
+  - prenom: "Florian"
+    anecdote: "Une blessure ? Impossible, ça n'existe pas. La douleur, c'est une information."
+  - prenom: "Kevin"
+    anecdote: "Le vrai diesel en course : démarrage lent, mais impossible de l'arrêter une fois lancé."
+  - prenom: "Alexandre"
+    anecdote: "Tout l'inverse de Kevin : il part trop vite et réajuste en cours de route. S'il n'explose pas sur une course, c'est qu'il ne la prenait pas au sérieux."
+benevoles_titre: "Les bénévoles"
+# N'ajouter un bénévole qu'avec son accord écrit (prénom + anecdote publiés).
+benevoles:
+  - prenom: "Nathan"
+    anecdote: "Notre Kilian Jornet du sud de la France, guide de haute colline de profession. On peut compter sur lui pour nous ouvrir le meilleur parcours et établir le temps de référence."
+  - prenom: "Jeremy"
+    anecdote: "Un coup de mou ? OK, mais à 500 m de l'arrivée, pas avant."
+appel_titre: "Devenir bénévole"
+appel_texte: "Un événement, ça ne se fait pas à 3. Balisage, ravitaillements, accueil, parking : si tu as un peu de temps, dis-le-nous."
+appel_bouton: "Je donne un coup de main"

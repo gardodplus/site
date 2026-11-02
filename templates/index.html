@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block contenu %}
+<section class="heros heros--accueil">
+  {{ montagne }}
+  <div class="w heros__contenu">
+    <p class="t surtitre">{{ site.slogan }}</p>
+    <h1 class="t heros__titre heros__titre--geant">{{ p.titre | dplus }}</h1>
+    <p class="heros__texte">{{ p.sous_titre }}</p>
+  </div>
+</section>
+
+<section class="w rdv">
+  <div class="rdv__carte">
+    <div>
+      <p class="t rdv__surtitre">{{ p.evenement_surtitre }}</p>
+      <p class="t rdv__nom">{{ p.evenement_nom }}</p>
+      <p class="rdv__texte">{{ p.evenement_texte }}</p>
+    </div>
+    <a href="#previens-moi" class="btn">Préviens-moi</a>
+  </div>
+</section>
+
+<section class="w bloc bloc--centre">
+  {% for para in p.intro %}<p class="texte-l">{{ para }}</p>{% endfor %}
+</section>
+
+<section class="w bloc">
+  <h2 class="t h2">{{ p.formats_titre }}</h2>
+  <div class="grille grille--3">
+    {% for f in p.formats %}
+    <article class="carte">
+      <h3 class="t h3">{{ f.nom }}</h3>
+      <p>{{ f.texte }}</p>
+      <div class="etiquettes">{% for e in f.etiquettes %}<span class="chip">{{ e }}</span>{% endfor %}</div>
+    </article>
+    {% endfor %}
+  </div>
+  <a class="lien-fort" href="le-trail.html">Voir tous les détails →</a>
+</section>
+
+<section id="previens-moi" class="bandeau">
+  <div class="w bandeau__grille">
+    <div class="pile">
+      <h2 class="t h2 h2--clair">{{ p.previens_titre }}</h2>
+      <p class="texte-l">{{ p.previens_texte }}</p>
+    </div>
+    <form class="previens" onsubmit="return false">
+      <label>Prénom (facultatif)<input class="champ champ--clair" type="text" autocomplete="given-name"></label>
+      <label>E-mail<input class="champ champ--clair" type="email" autocomplete="email"></label>
+      <button type="submit" class="btn btn--plein" disabled>Préviens-moi !</button>
+      <p class="petit">Le formulaire ouvre très bientôt. En attendant, suis-nous sur <a href="{{ site.instagram_lien }}">Instagram {{ site.instagram_compte }}</a>.</p>
+      <p class="petit">On utilise ton e-mail uniquement pour te prévenir. Tu peux te désinscrire à tout moment.</p>
+    </form>
+  </div>
+</section>
+
+<section class="w bloc actus">
+  <div class="pile">
+    <h2 class="t h2">Actus</h2>
+    {% for a in p.actus %}
+    <article class="carte">
+      <h3 class="t h3">{{ a.titre }}</h3>
+      <p>{{ a.texte }}</p>
+    </article>
+    {% endfor %}
+  </div>
+  <div class="pile">
+    <h2 class="t h2">Suis-nous</h2>
+    <div class="carte"><a class="lien-fort" href="{{ site.instagram_lien }}">Instagram {{ site.instagram_compte }}</a></div>
+  </div>
+</section>
+{% endblock %}

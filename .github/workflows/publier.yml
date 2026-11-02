@@ -1,0 +1,59 @@
+# Construit et publie le site sur GitHub Pages à chaque modification de la branche main.
+name: Publier le site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  construire:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer les outils de construction
+        run: pip install -r requirements.txt
+
+      - name: Récupérer les polices Barlow (hébergées sur le site, pas chez Google)
+        run: |
+          mkdir -p /tmp/polices assets/fonts
+          cd /tmp/polices
+          npm pack @fontsource/barlow@5 @fontsource/barlow-condensed@5 --silent
+          for f in *.tgz; do tar -xzf "$f" && mv package "${f%.tgz}"; done
+          cp "$(find . -name 'barlow-latin-400-normal.woff2' | head -1)" "$GITHUB_WORKSPACE/assets/fonts/barlow-400.woff2"
+          cp "$(find . -name 'barlow-latin-600-normal.woff2' | head -1)" "$GITHUB_WORKSPACE/assets/fonts/barlow-600.woff2"
+          cp "$(find . -name 'barlow-condensed-latin-800-normal.woff2' | head -1)" "$GITHUB_WORKSPACE/assets/fonts/barlow-condensed-800.woff2"
+          ls -l "$GITHUB_WORKSPACE/assets/fonts"
+
+      - name: Construire le site
+        run: python build.py
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  publier:
+    needs: construire
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploiement.outputs.page_url }}
+    steps:
+      - id: deploiement
+        uses: actions/deploy-pages@v4

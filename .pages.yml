@@ -1,0 +1,177 @@
+# Configuration de Pages CMS : ce que Florian, Kevin et Alexandre peuvent modifier sans code.
+# Astuce : pour une info pas encore fixée, écrire « bientôt » ou « à venir » ; elle s'affiche en pastille grise.
+
+content:
+  - name: accueil
+    label: Accueil
+    type: file
+    path: content/accueil.yml
+    format: yaml
+    fields:
+      - { name: titre, label: "Grand titre", type: string }
+      - { name: sous_titre, label: "Phrase sous le titre", type: text }
+      - { name: evenement_surtitre, label: "Encart événement : petit titre", type: string }
+      - { name: evenement_nom, label: "Encart événement : nom", type: string }
+      - { name: evenement_texte, label: "Encart événement : texte (date…)", type: string }
+      - { name: intro, label: "Paragraphes d'introduction", type: text, list: true }
+      - { name: formats_titre, label: "Titre des formats", type: string }
+      - name: formats
+        label: "Formats (cartes)"
+        type: object
+        list: true
+        fields:
+          - { name: nom, label: "Nom", type: string }
+          - { name: texte, label: "Texte", type: text }
+          - { name: etiquettes, label: "Pastilles (ex. « D+ : 450 m »)", type: string, list: true }
+      - { name: previens_titre, label: "Bloc Préviens-moi : titre", type: string }
+      - { name: previens_texte, label: "Bloc Préviens-moi : texte", type: text }
+      - name: actus
+        label: "Actus (la première s'affiche en haut)"
+        type: object
+        list: true
+        fields:
+          - { name: titre, label: "Titre", type: string }
+          - { name: texte, label: "Texte", type: text }
+
+  - name: trail
+    label: Le trail
+    type: file
+    path: content/trail.yml
+    format: yaml
+    fields:
+      - { name: titre, label: "Titre", type: string }
+      - { name: sous_titre, label: "Sous-titre", type: string }
+      - { name: quand, label: "Quand (date)", type: string }
+      - { name: ou, label: "Où", type: string }
+      - { name: avertissement, label: "Texte à côté", type: text }
+      - name: formats
+        label: "Formats"
+        type: object
+        list: true
+        fields:
+          - { name: nom, label: "Nom", type: string }
+          - { name: pour_qui, label: "Pour qui ?", type: text }
+          - { name: ce_que_tu_vas_aimer, label: "Ce que tu vas aimer", type: text }
+          - name: infos
+            label: "Infos (distance, D+, départ, tarif…)"
+            type: object
+            list: true
+            fields:
+              - { name: libelle, label: "Libellé", type: string }
+              - { name: valeur, label: "Valeur (« bientôt » si pas encore fixé)", type: string }
+      - { name: choisir_titre, label: "Titre « Bien choisir »", type: string }
+      - name: conseils
+        label: "Conseils"
+        type: object
+        list: true
+        fields:
+          - { name: question, label: "Question", type: string }
+          - { name: reponse, label: "Réponse", type: text }
+
+  - name: infos
+    label: Infos pratiques
+    type: file
+    path: content/infos.yml
+    format: yaml
+    fields:
+      - { name: titre, label: "Titre", type: string }
+      - { name: intro, label: "Introduction", type: text }
+      - name: cartes
+        label: "Cartes d'infos"
+        type: object
+        list: true
+        fields:
+          - { name: titre, label: "Titre", type: string }
+          - { name: statut, label: "Pastille (« bientôt », « à venir », ou vide quand c'est fixé)", type: string }
+          - { name: texte, label: "Texte", type: text }
+      - { name: faq_titre, label: "Titre de la FAQ", type: string }
+      - name: faq
+        label: "Questions fréquentes"
+        type: object
+        list: true
+        fields:
+          - { name: question, label: "Question", type: string }
+          - { name: reponse, label: "Réponse", type: text }
+          - { name: bouton_texte, label: "Bouton : texte (facultatif)", type: string }
+          - { name: bouton_lien, label: "Bouton : lien (facultatif)", type: string }
+
+  - name: asso
+    label: L'asso
+    type: file
+    path: content/asso.yml
+    format: yaml
+    fields:
+      - { name: titre, label: "Titre", type: string }
+      - { name: qui_titre, label: "« Qui on est » : titre", type: string }
+      - { name: qui_texte, label: "« Qui on est » : texte", type: text }
+      - { name: terrain_titre, label: "« Terrain de jeu » : titre", type: string }
+      - { name: terrain_texte, label: "« Terrain de jeu » : texte", type: text }
+      - { name: nom_titre, label: "« Notre nom » : titre", type: string }
+      - { name: nom_lignes, label: "« Notre nom » : lignes (**gras** possible)", type: string, list: true }
+      - { name: nom_chute, label: "« Notre nom » : phrase finale", type: text }
+      - { name: valeurs_titre, label: "Valeurs : titre", type: string }
+      - { name: valeurs, label: "Valeurs : textes", type: text, list: true }
+      - { name: associes_titre, label: "Associés : titre", type: string }
+      - name: associes
+        label: "Associés"
+        type: object
+        list: true
+        fields:
+          - { name: prenom, label: "Prénom", type: string }
+          - { name: anecdote, label: "Anecdote", type: text }
+      - { name: benevoles_titre, label: "Bénévoles : titre", type: string }
+      - name: benevoles
+        label: "Bénévoles (uniquement avec leur accord écrit)"
+        type: object
+        list: true
+        fields:
+          - { name: prenom, label: "Prénom", type: string }
+          - { name: anecdote, label: "Anecdote", type: text }
+      - { name: appel_titre, label: "Appel aux bénévoles : titre", type: string }
+      - { name: appel_texte, label: "Appel aux bénévoles : texte", type: text }
+      - { name: appel_bouton, label: "Appel aux bénévoles : bouton", type: string }
+
+  - name: contact
+    label: Contact
+    type: file
+    path: content/contact.yml
+    format: yaml
+    fields:
+      - { name: titre, label: "Titre", type: string }
+      - { name: intro, label: "Introduction", type: text }
+      - { name: coup_de_main_titre, label: "Carte coup de main : titre", type: string }
+      - { name: coup_de_main_texte, label: "Carte coup de main : texte", type: string }
+      - { name: formulaire_titre, label: "Formulaire : titre", type: string }
+      - { name: formulaire_texte, label: "Formulaire : texte", type: text }
+      - { name: missions, label: "Missions proposées", type: string, list: true }
+
+  - name: mentions
+    label: Mentions légales
+    type: file
+    path: content/mentions.yml
+    format: yaml
+    fields:
+      - { name: titre, label: "Titre", type: string }
+      - { name: editeur, label: "Éditeur", type: text }
+      - { name: siege, label: "Siège social", type: string }
+      - { name: rna, label: "N° RNA", type: string }
+      - { name: telephone, label: "Téléphone", type: string }
+      - { name: directeur_publication, label: "Directeur de la publication", type: string }
+      - { name: hebergeur, label: "Hébergeur", type: text }
+      - { name: propriete, label: "Propriété intellectuelle", type: text }
+      - { name: donnees, label: "Données personnelles", type: text }
+      - { name: credits, label: "Crédits", type: text }
+      - { name: mise_a_jour, label: "Dernière mise à jour", type: string }
+
+  - name: site
+    label: Réglages généraux
+    type: file
+    path: content/site.yml
+    format: yaml
+    fields:
+      - { name: nom, label: "Nom de l'asso", type: string }
+      - { name: slogan, label: "Slogan", type: string }
+      - { name: email, label: "E-mail de contact", type: string }
+      - { name: instagram_compte, label: "Compte Instagram", type: string }
+      - { name: instagram_lien, label: "Lien Instagram", type: string }
+      - { name: mention_pied_de_page, label: "Mention en pied de page", type: string }

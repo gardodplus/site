@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block contenu %}
+<section class="heros">
+  {{ montagne }}
+  <div class="w heros__contenu">
+    <h1 class="t heros__titre">{{ p.titre }}</h1>
+    <p class="t surtitre">{{ site.slogan }}</p>
+  </div>
+</section>
+
+<section class="w bloc deux-col deux-col--haut">
+  <div class="pile">
+    <h2 class="t h2">{{ p.qui_titre }}</h2>
+    <p class="texte-l">{{ p.qui_texte }}</p>
+    <h2 class="t h2">{{ p.terrain_titre }}</h2>
+    <p class="texte-l">{{ p.terrain_texte }}</p>
+  </div>
+  <div class="pile">
+    <h2 class="t h2">{{ p.nom_titre }}</h2>
+    <div class="carte">
+      {% for l in p.nom_lignes %}<p class="texte-l">{{ l | md_inline }}</p>{% endfor %}
+      <p class="texte-l">{{ p.nom_chute }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="w bloc">
+  <h2 class="t h2">{{ p.valeurs_titre }}</h2>
+  <div class="grille grille--2">
+    {% for v in p.valeurs %}<div class="carte carte--centre"><p class="texte-l">{{ v }}</p></div>{% endfor %}
+  </div>
+</section>
+
+<section class="w bloc">
+  <h2 class="t h2">{{ p.associes_titre }}</h2>
+  <div class="grille grille--3">
+    {% for a in p.associes %}<div class="carte carte--centre"><p class="t prenom">{{ a.prenom }}</p><p>{{ a.anecdote }}</p></div>{% endfor %}
+  </div>
+</section>
+
+{% if p.benevoles %}
+<section class="w bloc">
+  <h2 class="t h2">{{ p.benevoles_titre }}</h2>
+  <div class="grille grille--3">
+    {% for a in p.benevoles %}<div class="carte carte--centre"><p class="t prenom">{{ a.prenom }}</p><p>{{ a.anecdote }}</p></div>{% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="bandeau">
+  <div class="w bandeau__ligne">
+    <div class="pile">
+      <h2 class="t h2 h2--clair">{{ p.appel_titre }}</h2>
+      <p class="texte-l">{{ p.appel_texte }}</p>
+    </div>
+    <a href="contact.html#formulaire-benevole" class="btn">{{ p.appel_bouton }}</a>
+  </div>
+</section>
+{% endblock %}

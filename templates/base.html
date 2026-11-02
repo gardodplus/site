@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page_titre %}{{ page_titre }} · {% endif %}{{ site.nom }}</title>
+<meta name="description" content="{{ description }}">
+<meta property="og:title" content="{% if page_titre %}{{ page_titre }} · {% endif %}{{ site.nom }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta name="theme-color" content="#0F2D24">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header class="entete">
+  <div class="w entete__barre">
+    <a href="index.html" class="entete__logo"><img src="assets/img/logo-couleur.svg" alt="{{ site.nom }}, accueil" width="280" height="39"></a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M4 8h20M4 14h20M4 20h20"/></svg>
+    </button>
+    <nav id="menu" class="menu" aria-label="Menu principal">
+      {% for p in navigation %}<a href="{{ p.lien }}"{% if p.id == page_id %} aria-current="page"{% endif %}>{{ p.titre }}</a>{% endfor %}
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+{% block contenu %}{% endblock %}
+</main>
+
+<footer class="pied">
+  <div class="w pied__grille">
+    <div class="pied__marque">
+      <img src="assets/img/logo-inverse.svg" alt="{{ site.nom }}" width="280" height="39">
+      <p class="t pied__slogan">{{ site.slogan }}</p>
+    </div>
+    <nav aria-label="Pied de page" class="pied__nav">
+      {% for p in navigation %}<a href="{{ p.lien }}">{{ p.titre }}</a>{% endfor %}
+    </nav>
+    <div class="pied__legal">
+      <span>{{ site.mention_pied_de_page }}</span>
+      <span class="pied__liens"><a href="mentions-legales.html">Mentions légales</a><a href="{{ site.instagram_lien }}">Instagram</a></span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/menu.js" defer></script>
+</body>
+</html>

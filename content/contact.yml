@@ -1,0 +1,7 @@
+titre: "Contact"
+intro: "Une question, une idée, un coup de main à proposer ? Écris-nous."
+coup_de_main_titre: "Un coup de main ?"
+coup_de_main_texte: "Tu veux aider le jour J ?"
+formulaire_titre: "Devenir bénévole"
+formulaire_texte: "Balisage, ravitaillements, accueil, parking : dis-nous ce que tu peux faire, même un peu. On te répond vite."
+missions: ["Balisage", "Ravitaillements", "Accueil et inscriptions", "Parking", "Autre chose"]

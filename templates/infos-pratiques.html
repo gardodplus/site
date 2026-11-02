@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block contenu %}
+<section class="heros">
+  {{ montagne }}
+  <div class="w heros__contenu">
+    <h1 class="t heros__titre">{{ p.titre }}</h1>
+    <p class="heros__texte">{{ p.intro }}</p>
+  </div>
+</section>
+
+<section class="w bloc">
+  <div class="grille grille--3">
+    {% for c in p.cartes %}
+    <article class="carte">
+      <div class="carte__tete"><h2 class="t h3">{{ c.titre }}</h2>{% if c.statut %}<span class="chip">{{ c.statut }}</span>{% endif %}</div>
+      {% if c.texte %}{{ c.texte | md }}{% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="w bloc faq">
+  <h2 class="t h2">{{ p.faq_titre }}</h2>
+  <div class="faq__liste">
+    {% for q in p.faq %}
+    <div class="faq__item">
+      <h3 class="faq__q">{{ q.question }}</h3>
+      <p>{{ q.reponse | md_inline }}</p>
+      {% if q.bouton_texte %}<a class="btn" href="{{ q.bouton_lien }}">{{ q.bouton_texte }}</a>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
