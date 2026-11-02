@@ -17,23 +17,27 @@
 </section>
 
 <section id="formulaire-benevole" class="w bloc">
-  <form class="carte formulaire" onsubmit="return false">
+  <form class="carte formulaire js-formulaire" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="{{ technique.web3forms_cle }}">
+    <input type="hidden" name="subject" value="Nouveau bénévole via gardodplus.fr">
+    <input type="hidden" name="from_name" value="Site Gard Ô D+">
+    <input type="checkbox" name="botcheck" class="piege" tabindex="-1" autocomplete="off" aria-hidden="true">
     <h2 class="t h2">{{ p.formulaire_titre }}</h2>
     <p class="texte-l">{{ p.formulaire_texte }}</p>
     <div class="grille grille--2">
-      <label>Ton prénom<input class="champ" type="text" autocomplete="given-name"></label>
-      <label>Ton e-mail<input class="champ" type="email" autocomplete="email"></label>
+      <label for="b-prenom">Ton prénom<input id="b-prenom" class="champ" type="text" name="Prénom" autocomplete="given-name" required></label>
+      <label for="b-email">Ton e-mail<input id="b-email" class="champ" type="email" name="email" autocomplete="email" required></label>
     </div>
     <fieldset>
       <legend>Ce que tu pourrais faire</legend>
-      <div class="cases">{% for m in p.missions %}<label class="case"><input type="checkbox">{{ m }}</label>{% endfor %}</div>
+      <div class="cases">{% for m in p.missions %}<label class="case"><input type="checkbox" name="Mission : {{ m }}" value="oui">{{ m }}</label>{% endfor %}</div>
     </fieldset>
-    <label>Une anecdote sur toi (elle rejoindra le mur des bénévoles, sur la page « L'asso »)<textarea class="champ" rows="3"></textarea></label>
-    <label class="case"><input type="checkbox">J'accepte que mon prénom et mon anecdote soient publiés sur le site.</label>
-    <label>Un mot pour nous (dispos, idées, questions)<textarea class="champ" rows="4"></textarea></label>
+    <label for="b-anecdote">Une anecdote sur toi (elle rejoindra le mur des bénévoles, sur la page « L'asso »)<textarea id="b-anecdote" class="champ" name="Anecdote" rows="3"></textarea></label>
+    <label class="case"><input type="checkbox" name="Accord publication prénom + anecdote" value="oui">J'accepte que mon prénom et mon anecdote soient publiés sur le site.</label>
+    <label for="b-message">Un mot pour nous (dispos, idées, questions)<textarea id="b-message" class="champ" name="Message" rows="4"></textarea></label>
     <p class="petit">Ton prénom et ton e-mail servent uniquement à te répondre. Plus d'infos dans les <a href="mentions-legales.html">mentions légales</a>.</p>
-    <button type="submit" class="btn" disabled>Envoyer</button>
-    <p class="petit">Le formulaire ouvre très bientôt. En attendant, écris-nous à <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+    <button type="submit" class="btn">Envoyer</button>
+    <p class="formulaire__statut" role="status" aria-live="polite"></p>
   </form>
 </section>
 {% endblock %}

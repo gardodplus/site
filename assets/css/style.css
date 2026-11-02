@@ -168,6 +168,12 @@ legend { padding: 0; margin-bottom: 4px; font-weight: 600; font-size: 17px; }
 .case { flex-direction: row; align-items: flex-start; gap: 12px; min-height: 44px; font-weight: 400; font-size: 18px; padding-top: 10px; }
 .case input { width: 22px; height: 22px; margin: 0; flex: none; accent-color: var(--foret); }
 
+/* Formulaires : piège à robots et messages */
+.piege { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.formulaire__statut { font-weight: 600; min-height: 1.5em; }
+.formulaire__statut--ok { color: #1F6B3A; }
+.formulaire__statut--erreur { color: #A3361A; }
+
 /* FAQ */
 .faq__liste { display: flex; flex-direction: column; gap: 18px; }
 .faq__item { display: flex; flex-direction: column; gap: 6px; padding-bottom: 18px; border-bottom: 1px solid var(--bord); }
