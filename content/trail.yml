@@ -1,0 +1,48 @@
+titre: "Le trail"
+sous_titre: "Trail de Saint-Nazaire — Première édition — par Gard Ô D+"
+quand: "2027, date à venir"
+ou: "Saint-Nazaire, Gard rhodanien"
+avertissement: "Les tracés, les D+ et les horaires arriveront quand ils seront validés. Pas de promesse en l'air."
+# Pour une info pas encore fixée, écrire « bientôt » : elle s'affiche en pastille grise.
+formats:
+  - nom: "Trail 8 km"
+    pour_qui: "Débutants, curieux, coureurs qui veulent se faire plaisir sans se vider."
+    ce_que_tu_vas_aimer: "Un parcours accessible pour découvrir le sentier, la garrigue et les vignes."
+    infos:
+      - { libelle: "Distance", valeur: "8 km" }
+      - { libelle: "D+", valeur: "bientôt" }
+      - { libelle: "Départ", valeur: "Même lieu · heure bientôt" }
+      - { libelle: "Tarif", valeur: "bientôt" }
+      - { libelle: "Âge minimum", valeur: "bientôt" }
+      - { libelle: "Ravitaillement", valeur: "bientôt" }
+      - { libelle: "Chronométrage", valeur: "bientôt" }
+  - nom: "Trail 15 km"
+    pour_qui: "Coureurs réguliers ou débutants motivés qui veulent un vrai défi."
+    ce_que_tu_vas_aimer: "Plus de kilomètres, plus de D+, plus de paysages."
+    infos:
+      - { libelle: "Distance", valeur: "15 km" }
+      - { libelle: "D+", valeur: "bientôt" }
+      - { libelle: "Départ", valeur: "Même lieu · heure bientôt" }
+      - { libelle: "Tarif", valeur: "bientôt" }
+      - { libelle: "Âge minimum", valeur: "bientôt" }
+      - { libelle: "Ravitaillements", valeur: "bientôt" }
+      - { libelle: "Chronométrage", valeur: "bientôt" }
+  - nom: "Rando"
+    pour_qui: "Tout le monde. Famille, copains, solo, marcheurs, coureurs en récupération."
+    ce_que_tu_vas_aimer: "Marcher à ton rythme, sans chrono et sans classement, sur les sentiers du coin."
+    infos:
+      - { libelle: "Distance", valeur: "bientôt" }
+      - { libelle: "D+", valeur: "bientôt" }
+      - { libelle: "Départ", valeur: "Même lieu · heure bientôt" }
+      - { libelle: "Tarif", valeur: "bientôt" }
+      - { libelle: "Ravitaillement", valeur: "bientôt" }
+choisir_titre: "Bien choisir ton parcours"
+conseils:
+  - question: "Tu n'as jamais couru en sentier ?"
+    reponse: "Prends le 8 km ou la rando."
+  - question: "Tu cours déjà régulièrement et tu veux te tester ?"
+    reponse: "Le 15 km est pour toi."
+  - question: "Tu viens avec ta famille ou des amis de niveaux différents ?"
+    reponse: "Prenez la rando ensemble, ou chacun son format : tout le monde prend le même départ et franchit la même ligne d'arrivée."
+  - question: "Un doute ?"
+    reponse: "[Écris-nous via la page Contact](contact.html), on répond."

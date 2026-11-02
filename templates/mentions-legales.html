@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block contenu %}
+<section class="heros heros--court">
+  <div class="w heros__contenu"><h1 class="t heros__titre">{{ p.titre }}</h1></div>
+</section>
+
+<section class="w bloc bloc--etroit mentions">
+  <div class="mentions__bloc">
+    <h2 class="t h3">Éditeur du site</h2>
+    <p>{{ p.editeur }}</p>
+    <p>Siège social : {{ p.siege }}</p>
+    <p>N° RNA : {{ p.rna | chips }}</p>
+    <p>E-mail : <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+    <p>Téléphone : {{ p.telephone | chips }}</p>
+  </div>
+  <div class="mentions__bloc"><h2 class="t h3">Directeur de la publication</h2><p>{{ p.directeur_publication }}</p></div>
+  <div class="mentions__bloc"><h2 class="t h3">Hébergement</h2><p>{{ p.hebergeur }}</p></div>
+  <div class="mentions__bloc"><h2 class="t h3">Propriété intellectuelle</h2><p>{{ p.propriete }}</p></div>
+  <div class="mentions__bloc"><h2 class="t h3">Données personnelles</h2><p>{{ p.donnees }}</p><p>Ce site ne dépose aucun cookie.</p></div>
+  <div class="mentions__bloc"><h2 class="t h3">Crédits</h2><p>{{ p.credits }}</p></div>
+  <p>Dernière mise à jour : {{ p.mise_a_jour | chips }}</p>
+</section>
+{% endblock %}

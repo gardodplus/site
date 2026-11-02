@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block contenu %}
+<section class="heros">
+  {{ montagne }}
+  <div class="w heros__contenu">
+    <h1 class="t heros__titre">{{ p.titre }}</h1>
+    <p class="heros__texte">{{ p.intro }}</p>
+  </div>
+</section>
+
+<section class="w bloc">
+  <div class="grille grille--3">
+    <div class="carte"><h2 class="t h3">Par e-mail</h2><a class="lien-fort" href="mailto:{{ site.email }}">{{ site.email }}</a></div>
+    <div class="carte"><h2 class="t h3">Sur Instagram</h2><a class="lien-fort" href="{{ site.instagram_lien }}">{{ site.instagram_compte }}</a></div>
+    <div class="carte"><h2 class="t h3">{{ p.coup_de_main_titre }}</h2><p>{{ p.coup_de_main_texte }}</p><a class="btn" href="#formulaire-benevole">Devenir bénévole</a></div>
+  </div>
+</section>
+
+<section id="formulaire-benevole" class="w bloc">
+  <form class="carte formulaire" onsubmit="return false">
+    <h2 class="t h2">{{ p.formulaire_titre }}</h2>
+    <p class="texte-l">{{ p.formulaire_texte }}</p>
+    <div class="grille grille--2">
+      <label>Ton prénom<input class="champ" type="text" autocomplete="given-name"></label>
+      <label>Ton e-mail<input class="champ" type="email" autocomplete="email"></label>
+    </div>
+    <fieldset>
+      <legend>Ce que tu pourrais faire</legend>
+      <div class="cases">{% for m in p.missions %}<label class="case"><input type="checkbox">{{ m }}</label>{% endfor %}</div>
+    </fieldset>
+    <label>Une anecdote sur toi (elle rejoindra le mur des bénévoles, sur la page « L'asso »)<textarea class="champ" rows="3"></textarea></label>
+    <label class="case"><input type="checkbox">J'accepte que mon prénom et mon anecdote soient publiés sur le site.</label>
+    <label>Un mot pour nous (dispos, idées, questions)<textarea class="champ" rows="4"></textarea></label>
+    <p class="petit">Ton prénom et ton e-mail servent uniquement à te répondre. Plus d'infos dans les <a href="mentions-legales.html">mentions légales</a>.</p>
+    <button type="submit" class="btn" disabled>Envoyer</button>
+    <p class="petit">Le formulaire ouvre très bientôt. En attendant, écris-nous à <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+  </form>
+</section>
+{% endblock %}

@@ -1,0 +1,24 @@
+titre: "Gare au D+ !"
+sous_titre: "Gard Ô D+, l'asso qui organise des trails et des randos dans le Gard rhodanien."
+evenement_surtitre: "Premier rendez-vous"
+evenement_nom: "Trail de Saint-Nazaire"
+evenement_texte: "Première édition, par Gard Ô D+. En 2027. Date à venir."
+intro:
+  - "Collines calcaires, garrigue, vignes, Cèze et soleil, avec du D+ qui pique juste ce qu'il faut."
+  - "Que tu coures toutes les semaines, que tu débutes ou que tu viennes marcher en famille, il y aura un parcours pour toi."
+formats_titre: "3 façons d'en profiter"
+formats:
+  - nom: "Trail 8 km"
+    texte: "Pour goûter au trail sans finir à quatre pattes."
+    etiquettes: ["D+ : bientôt", "Départ : bientôt"]
+  - nom: "Trail 15 km"
+    texte: "Pour ceux qui veulent un vrai défi. Le D+ sera au rendez-vous, on ne te mentira pas."
+    etiquettes: ["D+ : bientôt", "Départ : bientôt"]
+  - nom: "Rando"
+    texte: "Pour marcher à ton rythme, papoter, regarder le paysage. Sans chrono."
+    etiquettes: ["Distance : bientôt", "Départ : bientôt"]
+previens_titre: "Le jour où on ouvre, tu le sais en premier."
+previens_texte: "Laisse-nous ton e-mail. On t'écrit quand la date est fixée et quand les inscriptions ouvrent. Pas de spam : seulement l'info utile."
+actus:
+  - titre: "On se lance !"
+    texte: "L'association a trouvé son nom : Gard Ô D+ ! Le premier trail aura lieu à Saint-Nazaire en 2027. Reste dans le coin."

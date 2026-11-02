@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block contenu %}
+<section class="heros">
+  {{ montagne }}
+  <div class="w heros__contenu">
+    <h1 class="t heros__titre">{{ p.titre }}</h1>
+    <p class="heros__texte">{{ p.sous_titre }}</p>
+  </div>
+</section>
+
+<section class="w bloc deux-col">
+  <div class="carte carte--liste">
+    <dl class="lignes">
+      <div class="ligne"><dt>Quand</dt><dd>{{ p.quand | chips }}</dd></div>
+      <div class="ligne"><dt>Où</dt><dd>{{ p.ou | chips }}</dd></div>
+    </dl>
+  </div>
+  <p class="texte-l">{{ p.avertissement }}</p>
+</section>
+
+<section class="w bloc">
+  <div class="grille grille--3 grille--haut">
+    {% for f in p.formats %}
+    <article class="carte">
+      <h2 class="t h2 h2--carte">{{ f.nom }}</h2>
+      <p><strong>Pour qui ?</strong> {{ f.pour_qui }}</p>
+      <p><strong>Ce que tu vas aimer.</strong> {{ f.ce_que_tu_vas_aimer }}</p>
+      <dl class="lignes">
+        {% for i in f.infos %}<div class="ligne"><dt>{{ i.libelle }}</dt><dd>{{ i.valeur | chips }}</dd></div>{% endfor %}
+      </dl>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="w bloc">
+  <h2 class="t h2">{{ p.choisir_titre }}</h2>
+  <div class="grille grille--2">
+    {% for c in p.conseils %}<div class="carte"><p><strong>{{ c.question }}</strong> {{ c.reponse | md_inline }}</p></div>{% endfor %}
+  </div>
+</section>
+
+<section class="bandeau bandeau--court">
+  <div class="w bandeau__ligne">
+    <h2 class="t h2 h2--clair">Le jour où on ouvre, tu le sais en premier.</h2>
+    <a href="index.html#previens-moi" class="btn">Préviens-moi</a>
+  </div>
+</section>
+{% endblock %}
