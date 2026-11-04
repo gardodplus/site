@@ -173,6 +173,11 @@ legend { padding: 0; margin-bottom: 4px; font-weight: 600; font-size: 17px; }
 .formulaire__statut { font-weight: 600; min-height: 1.5em; }
 .formulaire__statut--ok { color: #1F6B3A; }
 .formulaire__statut--erreur { color: #A3361A; }
+.formulaire__statut--clair.formulaire__statut--ok, .formulaire__statut--clair.formulaire__statut--erreur, .formulaire__statut--clair { color: var(--sable); }
+
+/* Boutons groupés */
+.actions { display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center; justify-content: center; }
+.bloc--centre .btn { align-self: center; }
 
 /* FAQ */
 .faq__liste { display: flex; flex-direction: column; gap: 18px; }

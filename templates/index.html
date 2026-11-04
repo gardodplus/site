@@ -44,12 +44,14 @@
       <h2 class="t h2 h2--clair">{{ p.previens_titre }}</h2>
       <p class="texte-l">{{ p.previens_texte }}</p>
     </div>
-    <form class="previens" onsubmit="return false">
-      <label>Prénom (facultatif)<input class="champ champ--clair" type="text" autocomplete="given-name"></label>
-      <label>E-mail<input class="champ champ--clair" type="email" autocomplete="email"></label>
-      <button type="submit" class="btn btn--plein" disabled>Préviens-moi !</button>
-      <p class="petit">Le formulaire ouvre très bientôt. En attendant, suis-nous sur <a href="{{ site.instagram_lien }}">Instagram {{ site.instagram_compte }}</a>.</p>
-      <p class="petit">On utilise ton e-mail uniquement pour te prévenir. Tu peux te désinscrire à tout moment.</p>
+    <form class="previens js-formulaire" data-service="brevo" action="{{ technique.brevo_action }}" method="POST">
+      <label for="p-prenom">Prénom (facultatif)<input id="p-prenom" class="champ champ--clair" type="text" name="PRENOM" maxlength="200" autocomplete="given-name"></label>
+      <label for="p-email">E-mail<input id="p-email" class="champ champ--clair" type="email" name="EMAIL" autocomplete="email" required></label>
+      <input type="text" name="email_address_check" value="" class="piege" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="locale" value="fr">
+      <button type="submit" class="btn btn--plein">Préviens-moi !</button>
+      <p class="formulaire__statut formulaire__statut--clair" role="status" aria-live="polite"></p>
+      <p class="petit">On t'envoie un mail pour confirmer ton inscription. Ton e-mail sert uniquement à te prévenir, et tu peux te désinscrire à tout moment.</p>
     </form>
   </div>
 </section>

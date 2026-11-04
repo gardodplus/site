@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block contenu %}
+<section class="heros">
+  {{ montagne }}
+  <div class="w heros__contenu">
+    <p class="t surtitre">Préviens-moi</p>
+    <h1 class="t heros__titre">C'est confirmé&nbsp;!</h1>
+    <p class="heros__texte">Ton inscription est validée. Le jour où on fixe la date et où les inscriptions ouvrent, tu le sais en premier.</p>
+  </div>
+</section>
+
+<section class="w bloc bloc--centre">
+  <p class="texte-l">En attendant, suis les coulisses de la préparation sur Instagram.</p>
+  <div class="actions">
+    <a class="btn" href="{{ site.instagram_lien }}">Instagram {{ site.instagram_compte }}</a>
+    <a class="lien-fort" href="le-trail.html">Découvrir les parcours →</a>
+  </div>
+</section>
+{% endblock %}
