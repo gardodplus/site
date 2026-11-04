@@ -1,3 +1,5 @@
 # Réglages techniques (non modifiables dans Pages CMS).
 # Clé publique Web3Forms du formulaire bénévole : elle est faite pour être visible dans le code du site.
 web3forms_cle: "4a3b9bbf-e336-4809-b052-503e718f82fc"
+# Adresse d'envoi du formulaire « Préviens-moi » (formulaire Brevo « Préviens-moi site »).
+brevo_action: "https://4cdb6b0a.sibforms.com/serve/MUIFAFUTcqDHWALjSCFY3MKUjgxrOrP4LKgiczmQEGhQszdc1b72RrStSgRvkXaSrKSdvR7S5QELjBTijPIpX6Y_jx5tP-fe-1QNA9RiKYHxLFU7z_0IGJKrGPgnoNBmsCFcuhYVM1mrMtOqOIJujhyopwxbL66-qZwvQQ2-eLFLV6Fo9qyxOc2IRp5J3MG3cSNenYqyrNlKdd9Emw=="

@@ -30,6 +30,8 @@ PAGES = [
      "Écrire à Gard Ô D+ ou devenir bénévole."),
     ("mentions-legales.html", "mentions-legales.html", "mentions.yml", None, "Mentions légales",
      "Mentions légales du site de Gard Ô D+."),
+    ("inscription-confirmee.html", "inscription-confirmee.html", "site.yml", None, "Inscription confirmée",
+     "Ton inscription à « Préviens-moi » est confirmée."),
 ]
 
 MOTS_A_VENIR = ("bientôt", "à venir")
